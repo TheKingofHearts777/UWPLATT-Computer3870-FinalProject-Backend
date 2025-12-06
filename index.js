@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 const ACCESS_TOKEN_EXPIRE_MINUTES = 30;
-const HOST = process.env.HOST || 0.0.0.0
+const HOST = process.env.HOST || "0.0.0.0"
 const PORT = process.env.PORT || 8081;
 const MONGO_URI = process.env.MONGO_URI;
 const DBNAME = process.env.DBNAME;
