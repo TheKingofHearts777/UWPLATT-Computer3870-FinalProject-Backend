@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 const ACCESS_TOKEN_EXPIRE_MINUTES = 30;
-const HOST = process.env.HOST || "0.0.0.0"
+const HOST = process.env.HOST || "0.0.0.0";
 const PORT = process.env.PORT || 8081;
 const MONGO_URI = process.env.MONGO_URI;
 const DBNAME = process.env.DBNAME;
@@ -160,6 +160,7 @@ app.post("/login", async (req, res) => {
                 username: user.username,
             },
         });
+        console.log("User logged in: ", { user: { id: user._id, username: user.username } });
     } catch (err) {
         console.error("Login error:", err);
         res.status(500).json({ error: "Internal server error" });
